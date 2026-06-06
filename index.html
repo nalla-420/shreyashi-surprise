@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Shreyashi ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary: #ff6b8b;
+            --primary-light: #ff8eaa;
+            --primary-dark: #ea4c6f;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --text-dark: #3a2b2e;
+            --text-muted: #7a6b6e;
+            --letter-bg: #fffaf2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #ffdde1, #ffb6c1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Bokeh & Hearts */
+        .hearts-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden; z-index: 0; pointer-events: none;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            animation: floatup 8s infinite ease-in;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 139, 0.4));
+        }
+
+        .glowing-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            animation: floatup 12s infinite linear;
+            bottom: -100px;
+        }
+
+        @keyframes floatup {
+            0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-120vh) scale(1.2) rotate(45deg); opacity: 0; }
+        }
+
+        /* Main Glassmorphism Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 400px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px 25px;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(255, 107, 139, 0.25), 
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 88vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container::-webkit-scrollbar { display: none; }
+
+        .screen {
+            display: none;
+            width: 100%;
+            margin: auto 0;
+        }
+
+        .screen.active {
+            display: block;
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.45rem;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 10px 20px -5px rgba(255, 117, 140, 0.5);
+            display: inline-block;
+            letter-spacing: 0.5px;
+            z-index: 5;
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            border: 2px solid var(--primary-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: left 0.25s ease-out, top 0.25s ease-out;
+            z-index: 100;
+        }
+
+        .btn-area {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+            min-height: 60px;
+        }
+
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 117, 140, 0.3);
+            color: var(--text-dark);
+            padding: 16px;
+            border-radius: 18px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .option-btn:active:not(:disabled) { transform: scale(0.98); }
+
+        .option-btn.selected {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 8px 15px rgba(255, 117, 140, 0.4);
+            animation: gentlePulse 2s infinite;
+        }
+        
+        @keyframes gentlePulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 117, 140, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 117, 140, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 117, 140, 0); }
+        }
+
+        .option-btn:disabled { cursor: default; }
+
+        .response-area {
+            display: none;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 117, 140, 0.2);
+            animation: popIn 0.5s ease;
+        }
+
+        .response-text {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* Loading Screen */
+        .loading-container { margin: 30px 0; text-align: left; }
+        .loading-label { font-size: 0.95rem; color: var(--text-dark); margin-bottom: 8px; display: flex; justify-content: space-between; font-weight: 500; }
+        
+        .progress-bar {
+            width: 100%; height: 16px; background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px; overflow: hidden; margin-bottom: 25px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 117, 140, 0.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
+            width: 0%;
+            border-radius: 20px;
+            transition: width 0.8s ease-out;
+            position: relative;
+        }
+        
+        .progress-fill::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.25) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.25) 75%, transparent 75%, transparent);
+            background-size: 1rem 1rem;
+            animation: moveStripes 1s linear infinite;
+        }
+
+        @keyframes moveStripes {
+            0% { background-position: 1rem 0; }
+            100% { background-position: 0 0; }
+        }
+
+        /* --- PREMIUM BOX (Used for Wish, Candle, Cake screens) --- */
+        .premium-wish-box {
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px dashed rgba(255, 117, 140, 0.5);
+            border-radius: 28px;
+            padding: 35px 20px;
+            margin-bottom: 25px;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(255, 117, 140, 0.1);
+        }
+
+        .wish-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .final-title {
+            font-family: 'Caveat', cursive;
+            background: linear-gradient(135deg, #ff477e 0%, #ff8eaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(255, 107, 139, 0.1);
+        }
+
+        .heart-divider {
+            color: #ff7eb3;
+            font-size: 1.2rem;
+            margin: 10px 0 20px 0;
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+
+        .final-msg {
+            font-size: 1.05rem; 
+            line-height: 1.7; 
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .final-msg p { margin-bottom: 12px; }
+
+        /* --- ENVELOPE CSS --- */
+        .envelope-container {
+            position: relative;
+            width: 280px; height: 180px;
+            margin: 40px auto 60px auto;
+            cursor: pointer; perspective: 1000px;
+        }
+        
+        .env-body {
+            position: absolute; width: 100%; height: 100%;
+            background: #ff6b8b; border-radius: 0 0 10px 10px;
+            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.3); z-index: 1;
+        }
+
+        .env-body::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            border-top: 90px solid transparent; border-bottom: 90px solid transparent;
+            border-left: 140px solid #ff8eaa; z-index: 3;
+        }
+        .env-body::after {
+            content: ''; position: absolute; top: 0; right: 0;
+            border-top: 90px solid transparent; border-bottom: 90px solid transparent;
+            border-right: 140px solid #ea4c6f; z-index: 3;
+        }
+
+        .env-bottom-flap {
+            position: absolute; bottom: 0; left: 0;
+            border-left: 140px solid transparent; border-right: 140px solid transparent;
+            border-bottom: 100px solid #ff7eb3; z-index: 4;
+        }
+
+        .env-top-flap {
+            position: absolute; top: 0; left: 0;
+            border-left: 140px solid transparent; border-right: 140px solid transparent;
+            border-top: 105px solid #d9385b; z-index: 5;
+            transform-origin: top; transition: transform 0.6s ease-in-out, z-index 0s 0.3s;
+        }
+
+        .env-letter-paper {
+            position: absolute; top: 5px; left: 15px;
+            width: 250px; height: 165px; background: var(--letter-bg);
+            border-radius: 5px; z-index: 2;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-image: repeating-linear-gradient(transparent, transparent 24px, #f2eadb 25px);
+            background-position: 0 10px;
+        }
+
+        .envelope-container.open .env-top-flap { transform: rotateX(180deg); z-index: 1; }
+        .envelope-container.open .env-letter-paper { transform: translateY(-110px); z-index: 6; }
+
+        .tap-text {
+            margin-top: 30px; color: var(--primary-dark);
+            font-weight: 600; animation: pulse 1.5s infinite;
+        }
+
+        /* --- STYLISH CUTE MEMO LETTER SCREEN --- */
+        #screen-9 {
+            background: #fffcfd;
+            border-radius: 16px;
+            padding: 45px 25px 35px 25px;
+            box-shadow: 0 20px 40px rgba(255, 117, 140, 0.15), inset 0 0 0 8px #ffe5ec;
+            position: relative;
+            text-align: left;
+            border: none;
+            background-image: radial-gradient(#ffb3c6 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+        }
+
+        .washi-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 130px;
+            height: 35px;
+            background: rgba(255, 117, 140, 0.45);
+            backdrop-filter: blur(4px);
+            border: 1px dashed rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(255, 117, 140, 0.2);
+            z-index: 10;
+        }
+
+        .cute-sticker {
+            position: absolute;
+            font-size: 2.2rem;
+            opacity: 0.9;
+            z-index: 5;
+            filter: drop-shadow(2px 4px 6px rgba(255,117,140,0.25));
+        }
+        
+        @keyframes gentleFloatRight {
+            0%, 100% { transform: translateY(0) rotate(15deg); }
+            50% { transform: translateY(-5px) rotate(20deg); }
+        }
+        
+        @keyframes gentleFloatLeft {
+            0%, 100% { transform: translateY(0) rotate(-15deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
+
+        .cute-sticker.top-right { top: 15px; right: 15px; animation: gentleFloatRight 4s ease-in-out infinite; }
+        .cute-sticker.bottom-left { bottom: 15px; left: 15px; animation: gentleFloatLeft 4s ease-in-out infinite; animation-delay: -2s; }
+
+        .letter-content {
+            font-family: 'Caveat', cursive, 'Comic Sans MS';
+            font-size: 1.45rem; 
+            line-height: 1.65;
+            color: #5a454b;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 117, 140, 0.2);
+        }
+
+        .letter-content p { margin-bottom: 15px; }
+        .letter-content strong { color: var(--primary-dark); font-weight: 700; font-size: 1.6rem; }
+        
+        .signature {
+            margin-top: 35px;
+            text-align: right;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            transform: rotate(-4deg);
+        }
+
+        /* --- SIMPLE CUTE CANDLE CSS --- */
+        .candle-interactive-area {
+            position: relative;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 20px 0 40px 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .candle-stick {
+            width: 22px;
+            height: 70px;
+            background: #fff;
+            border-radius: 5px;
+            background-image: repeating-linear-gradient(45deg, #fff, #fff 6px, #ff7eb3 6px, #ff7eb3 12px);
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .candle-wick {
+            width: 3px;
+            height: 12px;
+            background: #444;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        .flame {
+            width: 20px;
+            height: 35px;
+            background: #ffaa00;
+            border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+            box-shadow: 0 0 15px #ffaa00, 0 0 30px #ff7eb3, 0 0 45px #ff7eb3;
+            position: absolute;
+            top: -42px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.4s infinite alternate;
+            z-index: 3;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1) rotate(-2deg); opacity: 0.9; }
+            100% { transform: translateX(-50%) scale(1.1) rotate(2deg); opacity: 1; }
+        }
+
+        .cake-base {
+            width: 140px;
+            height: 50px;
+            background: #ffb3c6;
+            border-radius: 20px 20px 10px 10px;
+            box-shadow: inset 0 -10px rgba(0,0,0,0.1), 0 10px 15px rgba(255, 107, 139, 0.2);
+            position: relative;
+            z-index: 1;
+            margin-top: -5px;
+        }
+
+        .smoke-particle {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: rgba(150, 150, 150, 0.6);
+            border-radius: 50%;
+            filter: blur(3px);
+            opacity: 0;
+            transform: translateX(-50%);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        @keyframes smokeRise {
+            0% { transform: translate(-50%, 0) scale(1); opacity: 0.8; }
+            100% { transform: translate(-50%, -60px) scale(3); opacity: 0; }
+        }
+
+        /* --- SIMPLE EMOJI CAKE CUTTING CSS --- */
+        .cut-cake-interactive {
+            position: relative;
+            font-size: 6.5rem;
+            margin: 30px 0;
+            cursor: pointer;
+            display: inline-block;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .cake-emoji {
+            transition: transform 0.3s ease;
+            display: inline-block;
+            filter: drop-shadow(0 15px 15px rgba(255, 107, 139, 0.3));
+        }
+
+        .cut-cake-interactive:active .cake-emoji {
+            transform: scale(0.95);
+        }
+
+        .knife-emoji {
+            position: absolute;
+            font-size: 4rem;
+            top: -20px;
+            right: -40px;
+            opacity: 0;
+            transform: rotate(20deg) translateY(-30px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+            z-index: 10;
+        }
+
+        .knife-emoji.animate-cut {
+            opacity: 1;
+            transform: rotate(-40deg) translateY(60px) translateX(-50px);
+        }
+
+        /* Song control button */
+        .music-btn {
+            position: fixed;
+            top: 20px; right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            width: 45px; height: 45px;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 16px rgba(255, 107, 139, 0.2);
+            cursor: pointer; z-index: 100;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_8dfb15509d.mp3?filename=cute-melody-124151.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
+
+    <div class="hearts-bg" id="hearts-bg"></div>
+
+    <div class="container" id="white-card">
+        
+        <!-- SCREEN 1 -->
+        <div id="screen-1" class="screen active" style="margin-top: 40px;">
+            <h2>Are you ready for something special? 😏</h2>
+            <div class="btn-area" id="btn-area-1">
+                <button class="btn" onclick="startJourney()">✅ Yes</button>
+                <button class="btn btn-outline" id="btn-no">❌ No</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 2 -->
+        <div id="screen-2" class="screen">
+            <h2>Are you still a little mad at me? 🤔</h2>
+            <div class="options-grid">
+                <button class="option-btn" onclick="handleOption('screen-2', this, 'Aww, okay 🥺 Just give me a chance to make you smile today! ❤️')">Yes 😒</button>
+                <button class="option-btn" onclick="handleOption('screen-2', this, 'I can work with \'a little\' 🥺 Let me try to make it zero! ✨')">A Little 😑</button>
+                <button class="option-btn" onclick="handleOption('screen-2', this, 'I\'ll take that as a \'yes, but I\'m being cute about it\'. 😏❤️')">Maybe 🤨</button>
+                <button class="option-btn" onclick="handleOption('screen-2', this, 'Phew! 😅 I still owe you the best birthday ever though! 🎂❤️')">Not Really 😊</button>
+            </div>
+            <div class="response-area">
+                <div class="response-text"></div>
+                <button class="btn" onclick="showScreen('screen-3')">Continue ➜</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 3 (Age Check) -->
+        <div id="screen-3" class="screen">
+            <h2>So... how old are you now? 🎂</h2>
+            <div class="options-grid">
+                <button class="option-btn" onclick="handleOption('screen-3', this, 'No matter what the number says... you\'re still an amazing friend. ✨❤️')">16</button>
+                <button class="option-btn" onclick="handleOption('screen-3', this, 'No matter what the number says... you\'re still an amazing friend. ✨❤️')">17</button>
+                <button class="option-btn" onclick="handleOption('screen-3', this, 'No matter what the number says... you\'re still an amazing friend. ✨❤️')">18</button>
+                <button class="option-btn" onclick="handleOption('screen-3', this, 'No matter what the number says... you\'re still an amazing friend. ✨❤️')">It's Classified 🤫</button>
+            </div>
+            <div class="response-area">
+                <div class="response-text"></div>
+                <button class="btn" onclick="showScreen('screen-4')">Next ➜</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 4 -->
+        <div id="screen-4" class="screen">
+            <h2>Can I tell you something important? ✨</h2>
+            <div class="options-grid">
+                <button class="option-btn" onclick="handleOption('screen-4', this, 'Perfect. Pay close attention. 😌')">Yes</button>
+                <button class="option-btn" onclick="handleOption('screen-4', this, 'You\'re the best. Listen closely. ✨')">Of Course</button>
+                <button class="option-btn" onclick="handleOption('screen-4', this, 'Brace yourself. 🎢')">Go Ahead</button>
+                <button class="option-btn" onclick="handleOption('screen-4', this, 'Good. Because this comes from the heart. 💖')">I'm Listening</button>
+            </div>
+            <div class="response-area">
+                <div class="response-text"></div>
+                <button class="btn" onclick="showScreen('screen-5')">Next ➜</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 5 -->
+        <div id="screen-5" class="screen">
+            <h2>If someone made a mistake and genuinely regretted it... 🥺</h2>
+            <div class="options-grid">
+                <button class="option-btn" onclick="handleOption('screen-5', this, 'You have the biggest heart. ❤️')">They deserve a 2nd chance ❤️</button>
+                <button class="option-btn" onclick="handleOption('screen-5', this, 'That’s very mature of you. I appreciate that. 🥺')">Everyone makes mistakes 🤝</button>
+                <button class="option-btn" onclick="handleOption('screen-5', this, 'Fair enough. Let me plead my case with cake. 🍰')">It depends, maybe 🎂</button>
+                <button class="option-btn" onclick="handleOption('screen-5', this, 'I’ll take my chances. Prepare to be persuaded. 🌹')">I'd think about it 😏</button>
+            </div>
+            <div class="response-area">
+                <div class="response-text"></div>
+                <button class="btn" onclick="startLoading()">Reveal Surprise ➜</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 6 -->
+        <div id="screen-6" class="screen">
+            <h2>Gathering the magic... 🎁</h2>
+            <div class="loading-container">
+                <div class="loading-label">
+                    <span>Happiness...</span>
+                    <span id="pct-1">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="fill-1"></div></div>
+                
+                <div class="loading-label">
+                    <span>Memories...</span>
+                    <span id="pct-2">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="fill-2"></div></div>
+                
+                <div class="loading-label">
+                    <span>Birthday Magic...</span>
+                    <span id="pct-3">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="fill-3"></div></div>
+            </div>
+            <div class="tap-text" style="margin-top: 10px;">Almost there...</div>
+        </div>
+
+        <!-- SCREEN 7 (Premium Birthday Wish) -->
+        <div id="screen-7" class="screen">
+            <div class="premium-wish-box">
+                <div class="wish-icon">✨🎂✨</div>
+                <div class="final-title" style="font-size: 3.2rem; line-height: 1.1;">Happy Birthday<br>Shreyashi</div>
+                <div class="heart-divider">♡ ━━━━━━━━ ♡</div>
+                <div class="final-msg">
+                    <p>To the most amazing person, Shreyashi...</p>
+                    <p>May your day be as beautiful as your smile, and your year as wonderful as your heart.</p>
+                    <p>You deserve all the stars in the sky and so much more.</p>
+                    <p>Have a truly magical birthday. ❤️</p>
+                </div>
+            </div>
+            <button class="btn" onclick="showScreen('screen-8')" style="width: 80%;">💌 Open Your Surprise</button>
+        </div>
+
+        <!-- SCREEN 8 (Envelope Animation) -->
+        <div id="screen-8" class="screen" style="margin-top: 20px;">
+            <h2>A letter for Shreyashi...</h2>
+            <div class="envelope-container" id="env-container" onclick="openEnvelope()">
+                <div class="env-body"></div>
+                <div class="env-letter-paper">
+                    <span style="font-family: 'Caveat', cursive; font-size: 1.4rem; color: #ff6b8b;">Dear Shreyashi...</span>
+                </div>
+                <div class="env-bottom-flap"></div>
+                <div class="env-top-flap"></div>
+            </div>
+            <div class="tap-text" id="tap-hint">Tap the envelope to open 👆</div>
+        </div>
+
+        <!-- SCREEN 9 (The Stylish Cute Letter) -->
+        <div id="screen-9" class="screen">
+            <div class="washi-tape"></div>
+            <div class="cute-sticker top-right">🌸</div>
+            <div class="cute-sticker bottom-left">✨</div>
+            <div class="letter-content">
+                <p>Dear Shreyashi,</p>
+                <p>First of all... <strong>Happy Birthday. 🎂❤️</strong></p>
+                <p>I wanted to take a moment to say something important straight from the heart.</p>
+                <p>I know things haven't been perfect between us lately. If I ever said or did something that made you feel upset, unimportant, or disappointed, I am incredibly sorry. 🥺</p>
+                <p>It was never my intention to hurt you. Looking back, I just wish I had handled things with more care. I am not writing this to make excuses, but simply to be honest and take responsibility for my mistakes.</p>
+                <p>No matter what happened, I have always deeply appreciated and respected you. You are a wonderful friend, and you deserve a life full of endless joy, love, and beautiful moments.</p>
+                <p>Please smile today. It's your special day, and you deserve to enjoy every single second of it. ✨</p>
+                <p>Thank you for being you.</p>
+                <div class="signature">Sincerely... I'm sorry. ❤️</div>
+            </div>
+            <button class="btn" style="margin-top: 25px; width: 100%; box-shadow: 0 4px 15px rgba(255,107,139,0.3);" onclick="showScreen('screen-10')">One more thing... 🎂</button>
+        </div>
+
+        <!-- SCREEN 10 (Blow the Candle - Simple Version) -->
+        <div id="screen-10" class="screen">
+            <div class="premium-wish-box">
+                <h2 id="candle-title" style="font-family: 'Caveat', cursive; font-size: 2.8rem; background: linear-gradient(135deg, #ff477e 0%, #ff8eaa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px;">Make a Wish! 🌟</h2>
+                <div class="heart-divider" id="candle-subtitle">Tap the flame to blow it out 🌬️</div>
+                
+                <div class="candle-interactive-area" onclick="blowCandle()">
+                    <div class="smoke-particle" id="smoke"></div>
+                    <div class="flame" id="flame"></div>
+                    <div class="candle-wick"></div>
+                    <div class="candle-stick"></div>
+                    <div class="cake-base"></div>
+                </div>
+                
+                <div class="final-msg" id="candle-msg">Close your eyes, make a wish, and tap!</div>
+            </div>
+            <button class="btn" id="btn-next-cake" style="display: none; width: 80%;" onclick="showScreen('screen-11')">Cut the Cake ➜</button>
+        </div>
+
+        <!-- SCREEN 11 (Cut the Cake - Simple Emoji Version) -->
+        <div id="screen-11" class="screen">
+            <div class="premium-wish-box">
+                <h2 id="cake-title" style="font-family: 'Caveat', cursive; font-size: 2.8rem; background: linear-gradient(135deg, #ff477e 0%, #ff8eaa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px;">Let's Cut It! 🍰</h2>
+                <div class="heart-divider" id="cake-subtitle">Tap the cake to slice it! 🔪</div>
+                
+                <div class="cut-cake-interactive" onclick="cutCake()" id="cake-interactive">
+                    <div class="knife-emoji" id="knife">🔪</div>
+                    <div class="cake-emoji" id="cake-display">🎂</div>
+                </div>
+                
+                <div class="final-msg" id="cake-final-msg" style="display: none;">
+                    <p><strong>Yay! Happy Birthday Shreyashi! 🎉</strong></p>
+                    <p>Here is the first piece, just for you! ❤️</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Floating Background Particles
+        const emojis = ['❤️', '✨', '💖', '🌸', '🎂'];
+        function createHearts() {
+            const container = document.getElementById('hearts-bg');
+            
+            for(let i=0; i<12; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                heart.style.fontSize = (Math.random() * 15 + 12) + 'px';
+                container.appendChild(heart);
+            }
+            
+            for(let i=0; i<8; i++) {
+                let orb = document.createElement('div');
+                orb.classList.add('glowing-orb');
+                let size = Math.random() * 80 + 40;
+                orb.style.width = size + 'px';
+                orb.style.height = size + 'px';
+                orb.style.left = Math.random() * 100 + 'vw';
+                orb.style.animationDuration = (Math.random() * 8 + 10) + 's';
+                orb.style.animationDelay = (Math.random() * 6) + 's';
+                container.appendChild(orb);
+            }
+        }
+        window.onload = createHearts;
+
+        // Music Control
+        const bgMusic = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        let isMusicPlaying = false;
+
+        function startJourney() {
+            const btnNo = document.getElementById('btn-no');
+            if (btnNo) btnNo.remove();
+
+            bgMusic.volume = 0.5;
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                musicToggle.style.display = 'block';
+            }).catch(e => console.log("Audio autoplay prevented", e));
+            
+            showScreen('screen-2');
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicToggle.innerText = '🔇';
+            } else {
+                bgMusic.play();
+                musicToggle.innerText = '🎵';
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        // Screen Navigation
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => {
+                s.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+            document.getElementById('white-card').scrollTop = 0;
+        }
+
+        // NO BUTTON LOGIC
+        const btnNo = document.getElementById('btn-no');
+        const whiteCard = document.getElementById('white-card');
+
+        function moveNoBtn(e) {
+            if(e) e.preventDefault();
+            
+            if (btnNo.parentNode !== document.body) {
+                const rect = btnNo.getBoundingClientRect();
+                btnNo.style.width = rect.width + 'px';
+                btnNo.style.height = rect.height + 'px';
+                
+                document.body.appendChild(btnNo);
+                btnNo.style.position = 'absolute';
+            }
+            
+            const cardRect = whiteCard.getBoundingClientRect();
+            const padding = 20; 
+            
+            const minX = cardRect.left + padding;
+            const minY = cardRect.top + padding;
+            const maxX = cardRect.right - btnNo.offsetWidth - padding;
+            const maxY = cardRect.bottom - btnNo.offsetHeight - padding;
+            
+            const randomX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+            const randomY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+            
+            btnNo.style.left = randomX + 'px';
+            btnNo.style.top = randomY + 'px';
+            btnNo.style.zIndex = '9999';
+        }
+
+        btnNo.addEventListener('touchstart', moveNoBtn, {passive: false});
+        btnNo.addEventListener('touchmove', moveNoBtn, {passive: false});
+        btnNo.addEventListener('mouseover', moveNoBtn);
+        btnNo.addEventListener('click', moveNoBtn);
+
+        // DYNAMIC OPTION HANDLING
+        function handleOption(screenId, btn, responseText) {
+            const screen = document.getElementById(screenId);
+            const btns = screen.querySelectorAll('.option-btn');
+            
+            btns.forEach(b => {
+                b.disabled = true;
+                if(b !== btn) {
+                    b.style.opacity = '0.4';
+                    b.style.transform = 'scale(0.95)';
+                }
+            });
+            
+            btn.classList.add('selected');
+            
+            const respArea = screen.querySelector('.response-area');
+            respArea.querySelector('.response-text').innerHTML = responseText;
+            respArea.style.display = 'block';
+            
+            setTimeout(() => {
+                whiteCard.scrollBy({ top: 150, behavior: 'smooth' });
+            }, 100);
+        }
+
+        // LOADING SCREEN
+        function animateValue(id, start, end, duration) {
+            if (start === end) return;
+            let current = start;
+            const obj = document.getElementById(id);
+            const stepTime = Math.abs(Math.floor(duration / (end - start)));
+            
+            const timer = setInterval(function() {
+                current += 1;
+                obj.innerHTML = current + "%";
+                if (current >= end) clearInterval(timer);
+            }, stepTime);
+        }
+
+        function startLoading() {
+            showScreen('screen-6');
+            
+            const fill1 = document.getElementById('fill-1');
+            const fill2 = document.getElementById('fill-2');
+            const fill3 = document.getElementById('fill-3');
+            
+            setTimeout(() => { fill1.style.width = '100%'; animateValue('pct-1', 0, 100, 800); }, 300);
+            setTimeout(() => { fill2.style.width = '100%'; animateValue('pct-2', 0, 100, 800); }, 1300);
+            setTimeout(() => { fill3.style.width = '100%'; animateValue('pct-3', 0, 100, 800); }, 2300);
+            
+            setTimeout(() => {
+                showScreen('screen-7');
+                triggerConfetti();
+            }, 3800);
+        }
+
+        // ENVELOPE & LETTER ANIMATION
+        function openEnvelope() {
+            const env = document.getElementById('env-container');
+            const hint = document.getElementById('tap-hint');
+            
+            if(env.classList.contains('open')) return;
+            
+            env.classList.add('open');
+            hint.innerHTML = "Opening... 💌";
+            
+            setTimeout(() => {
+                showScreen('screen-9');
+            }, 1600);
+        }
+
+        // CONFETTI
+        function triggerConfetti() {
+            const colors = ['#ff758c', '#ff7eb3', '#ffd700', '#fffaf2', '#ff9a9e'];
+            for (let i = 0; i < 80; i++) {
+                let conf = document.createElement('div');
+                conf.style.position = 'absolute';
+                conf.style.width = Math.random() * 8 + 6 + 'px';
+                conf.style.height = Math.random() > 0.5 ? conf.style.width : (Math.random() * 15 + 10 + 'px');
+                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.top = '-20px';
+                conf.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                conf.style.zIndex = '999';
+                conf.style.pointerEvents = 'none';
+                document.body.appendChild(conf);
+
+                let duration = Math.random() * 2 + 2;
+                conf.animate([
+                    { transform: `translate3d(0, 0, 0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate3d(${Math.random()*200 - 100}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'linear',
+                    fill: 'forwards'
+                });
+                
+                setTimeout(() => conf.remove(), duration * 1000);
+            }
+        }
+
+        // --- SIMPLE CANDLE BLOWING LOGIC ---
+        let candleBlown = false;
+        function blowCandle() {
+            if (candleBlown) return;
+            candleBlown = true;
+            
+            const flame = document.getElementById('flame');
+            const smoke = document.getElementById('smoke');
+            const title = document.getElementById('candle-title');
+            const subtitle = document.getElementById('candle-subtitle');
+            const msg = document.getElementById('candle-msg');
+            const nextBtn = document.getElementById('btn-next-cake');
+
+            // Hide flame, show smoke
+            flame.style.animation = 'none';
+            flame.style.display = 'none';
+            
+            // Make the wick glow like an ember
+            const wick = document.querySelector('.candle-wick');
+            wick.style.background = '#cc3300';
+            wick.style.boxShadow = '0 0 5px #ff4400';
+            
+            smoke.style.animation = 'smokeRise 2s forwards';
+
+            // Change Text
+            title.innerHTML = "Wish Made! ✨";
+            subtitle.innerHTML = "May all your dreams come true ❤️";
+            msg.innerHTML = "Now it's time for the best part...";
+            
+            // Show next button
+            setTimeout(() => {
+                nextBtn.style.display = 'inline-block';
+                nextBtn.style.animation = 'popIn 0.5s ease';
+                document.getElementById('white-card').scrollBy({ top: 100, behavior: 'smooth' });
+            }, 1000);
+        }
+
+        // --- SIMPLE EMOJI CAKE CUTTING LOGIC ---
+        let cakeCut = false;
+        function cutCake() {
+            if (cakeCut) return;
+            cakeCut = true;
+
+            const knife = document.getElementById('knife');
+            const cakeDisplay = document.getElementById('cake-display');
+            const title = document.getElementById('cake-title');
+            const subtitle = document.getElementById('cake-subtitle');
+            const finalMsg = document.getElementById('cake-final-msg');
+
+            // Animate knife down
+            knife.classList.add('animate-cut');
+
+            // Wait for knife animation to finish, then transform cake
+            setTimeout(() => {
+                cakeDisplay.innerHTML = '🍰🍽️';
+                cakeDisplay.style.transform = 'scale(1.1)';
+                knife.style.display = 'none';
+                
+                title.innerHTML = "Yay! ❤️";
+                subtitle.innerHTML = "Enjoy your cake!";
+                finalMsg.style.display = 'block';
+                finalMsg.style.animation = 'popIn 0.5s ease';
+                
+                triggerConfetti(); // Rain confetti again!
+            }, 500);
+        }
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
